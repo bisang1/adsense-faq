@@ -30,7 +30,7 @@ h1 {
 
 /* 모달 스타일 */
 .modal {
-    display: none;
+    display: none; /* 처음에는 숨김 상태 */
     position: fixed;
     z-index: 1;
     left: 0;
