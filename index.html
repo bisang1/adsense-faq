@@ -9,6 +9,104 @@
 <body>
     <div class="container">
         <h1>애드센스 초보가 흔히 하는 질문모음</h1>
+
+
+
+<!-- 모달 컨테이너 -->
+<div id="questionModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>오픈톡방 3일차 받은 질문 리스트</h2>
+        <p class="subtitle">요건 재밌게 읽어주세영~</p>
+        
+        <div class="question-list">
+            <div class="question-item">
+                <span class="number">1</span>
+                <p>워프나 티스 글 쓰실 때 사진은 보통 몇 개 정도 넣는 게 좋은가요? 그게 기준이 있나요?</p>
+            </div>
+            
+            <div class="question-item">
+                <span class="number">2</span>
+                <p>소신님은 워프 글쓰기를 수동으로 하고 계신가요?</p>
+            </div>
+            
+            <div class="question-item">
+                <span class="number">3</span>
+                <p>수익적인 면에서는 차이가 있나요? (AI 글쓰기와 직접 글쓰기 비교)</p>
+            </div>
+            
+            <div class="question-item">
+                <span class="number">4</span>
+                <p>제 워프 글에서 제 다른 글로 링크를 걸어 놓으면 그걸 본 사람이 그 버튼을 클릭하면 애드센스 수익이 쌓이는 건가요? 전면광고로???</p>
+            </div>
+            
+            <div class="question-item">
+                <span class="number">5</span>
+                <p>링크를 누를 때 어떨 땐 광고가 나오고 어떨 땐 바로 링크로 들어가지고 하는 거 같은데 기준이 무엇인지 궁금합니다.</p>
+            </div>
+            
+            <div class="question-item">
+                <span class="number">6</span>
+                <p>애드센스 수익은 한 아이디로 다 받으시나요?</p>
+            </div>
+            
+            <div class="question-item">
+                <span class="number">7</span>
+                <p>티스토리는 최적화가 어렵지 않다고 들었습니다. 그냥 글 아무거나 하나만 써두고 1달 넘게 놔두면 최적화가 된다던데 맞나요?</p>
+            </div>
+            
+            <div class="question-item">
+                <span class="number">8</span>
+                <p>네블에서 다른 사이트로 넘기는 링크 남기면 저품된다던데 이게 맞나요?</p>
+            </div>
+            
+            <div class="question-item">
+                <span class="number">9</span>
+                <p>10개씩 돌리면 10개 도메인 사서 하는 거예요?</p>
+            </div>
+            
+            <div class="question-item">
+                <span class="number">10</span>
+                <p>소신님은 본인 GPT 만들어서 블로그 글 작성하시나요?</p>
+            </div>
+            
+            <div class="question-item">
+                <span class="number">11</span>
+                <p>워프로 도메인 사서 애드센스 승인받은 블로그를 하위 도메인으로 승인 없이 여러 개 할 수 있나요?</p>
+            </div>
+            
+            <div class="question-item">
+                <span class="number">12</span>
+                <p>워프는 몇 개까지 할 수 있나요?</p>
+            </div>
+            
+            <div class="question-item">
+                <span class="number">13</span>
+                <p>이런 키워드들이 검색량이 받쳐줘야 쓸만한 것들인지 골라야 되겠죠?</p>
+            </div>
+            
+            <div class="question-item">
+                <span class="number">14</span>
+                <p>워프는 구글 노출까지 시간이 너무 많이 걸리는 거 같아요. 어떻게 생각하시나요?</p>
+            </div>
+            
+            <div class="question-item">
+                <span class="number">15</span>
+                <p>네블에 워프 링크나 티스 링크 괜찮나요?</p>
+            </div>
+            
+            <div class="question-item">
+                <span class="number">16</span>
+                <p>워드프레스 만들어서 해보려는데요. 애드센스 받는 거부터 목적으로 시작하면 되는 거죠?</p>
+            </div>
+            
+            <div class="question-item">
+                <span class="number">17</span>
+                <p>글쓰기 주제는 하나만 하는 게 좋은 거예요?</p>
+            </div>
+        </div>
+    </div>
+</div>
         
         <div class="grid">
             <div class="card purple">
@@ -36,5 +134,25 @@
             </div>
         </div>
     </div>
+
+// 모달 기능
+const modal = document.getElementById("questionModal");
+const btn = document.querySelector(".card.purple button");
+const span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+    
 </body>
 </html>
