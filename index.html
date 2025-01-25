@@ -525,7 +525,46 @@
     <p>처음에는 여러 주제로 시작해도 괜찮습니다. 시간이 지나면서 자신이 잘 쓰는 주제나 수익이 잘 나오는 주제를 찾을 수 있습니다. 이후 특정 주제로 집중할 수 있습니다.</p>
 </div>
 
+  <script>
+        // 첫 번째 모달
+        const modal = document.getElementById("questionModal");
+        const btn = document.querySelector(".card.purple button");
+        const span = document.getElementsByClassName("close")[0];
 
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // 두 번째 모달 (워드프레스)
+        const wpModal = document.getElementById("wordpressModal");
+        const wpBtn = document.querySelector(".card.peach button");
+        const wpClose = wpModal.getElementsByClassName("close")[0];
+
+        wpBtn.onclick = function() {
+            wpModal.style.display = "block";
+        }
+
+        wpClose.onclick = function() {
+            wpModal.style.display = "none";
+        }
+
+        // 모달 외부 클릭시 닫기
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+            if (event.target == wpModal) {
+                wpModal.style.display = "none";
+            }
+        }
+    </script>
+
+
+                
                 
             </section>
         </div>
