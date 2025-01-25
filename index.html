@@ -372,28 +372,24 @@
             </div>
         </div>
     </div>
-    <script>
-        const modal = document.getElementById("questionModal");
-        const btn = document.querySelector(".card.purple button");
-        const span = document.getElementsByClassName("close")[0];
 
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
+<script>
+    // 첫 번째 모달 관련 코드
+    const modal = document.getElementById("questionModal");
+    const btn = document.querySelector(".card.purple button");
+    const span = document.getElementsByClassName("close")[0];
 
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
 
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
 
- // 여기에 새로운 워드프레스 모달 JavaScript 코드 추가
+    // 두 번째 모달 (워드프레스) 관련 코드
     const wpModal = document.getElementById("wordpressModal");
-    const wpBtn = document.querySelector(".card.peach button");
+    const wpBtn = document.querySelector(".card.peach button");  // 이 부분이 중요합니다
     const wpClose = wpModal.getElementsByClassName("close")[0];
 
     wpBtn.onclick = function() {
@@ -404,7 +400,7 @@
         wpModal.style.display = "none";
     }
 
-    // 기존 window.onclick 함수 수정
+    // 모달 외부 클릭시 닫기
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = "none";
@@ -414,6 +410,7 @@
         }
     }
 
+    
 
 
         
