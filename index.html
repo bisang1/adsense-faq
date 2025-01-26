@@ -185,6 +185,42 @@
             padding-bottom: 10px;
             border-bottom: 2px solid #6c5ce7;
         }
+
+/* 수익 및 광고 모달 스타일 */
+.ad-section {
+    margin-bottom: 30px;
+    padding: 25px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.ad-item {
+    background: #f8f9fa;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 10px;
+    border-left: 4px solid #ffe6e6;
+}
+
+.ad-item p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.ad-section h4 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ffe6e6;
+}
+
+
+
+
+        
     </style>
 
 
@@ -450,7 +486,54 @@
     </div>
 </div>
 
+<!-- 세 번째 모달 -->
+<div id="adModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>수익 및 광고 관련 질문</h2>
+        <p class="subtitle">질문에 대한 답은 제가 경험한 바를 바탕으로 설명한 내용입니다.</p>
+        
+        <div class="ad-content">
+            <section class="ad-section">
+                <h4>AI vs 직접 글쓰기, 수익 차이가 있나요?</h4>
+                <div class="ad-item">
+                    <p>음~ 이건 좀 복잡한 문제예요. AI로 쓴 글이랑 직접 쓴 글, 둘 다 장단점이 있거든요.</p>
+                    <p>AI는 빠르고 효율적이에요. 한 번에 여러 글을 뚝딱 만들어낼 수 있죠. 근데 문제는 품질이에요. AI가 만든 글은 좀 뻔하고 깊이가 없을 수 있어요.</p>
+                    <p>그리하여 소신은 AI 자동화까지는 하진 않습니다. 하지만 AI를 활용하여 소신만의 글로 나오도록 개인화를 시켜서 글을 뽑습니다. 자동화보다 글 발행 갯수는 현저히 떨어지지만 정보와 가독성 독자들의 글의 필요성을 가장 중요하게 생각하므로 요래요래 합니다.~</p>
+                    <p>직접 쓴 글은 시간이 좀 걸리지만, 독자들이 더 좋아하는 경향이 있어요. 왜냐하면 우리만의 경험과 통찰력을 담을 수 있거든요.</p>
+                    <p>수익 면에서는, 처음엔 AI가 더 많아 보일 수 있어요. 글을 빨리 많이 쓸 수 있으니까요. 하지만 장기적으로 봤을 때는 직접 쓴 양질의 콘텐츠가 더 안정적인 수익을 가져다 줄 거예요. 독자들이 계속 찾아오고, 검색 엔진에서도 잘 뜨니까요.</p>
+                </div>
+            </section>
 
+            <section class="ad-section">
+                <h4>내부 링크로 수익 올리기</h4>
+                <div class="ad-item">
+                    <p>오~ 이거 좋은 질문이에요! 네, 맞아요. 워프에서 다른 글로 링크 걸어두면 전면광고로 수익이 생길 수 있어요.</p>
+                    <p>작동 원리는 이래요. 누군가 당신 글에서 링크를 클릭하면, 새 페이지로 가기 전에 전면광고가 뜰 수 있어요. 이게 바로 수익으로 이어지는 거죠.</p>
+                    <p>근데 주의할 점! 너무 많은 링크나 광고는 독자들을 짜증나게 할 수 있어요. 적당히, 자연스럽게 넣는 게 중요해요.</p>
+                </div>
+            </section>
+
+            <section class="ad-section">
+                <h4>링크 클릭 시 광고 나오는 기준</h4>
+                <div class="ad-item">
+                    <p>아하, 이거 많이들 궁금해 하시더라고요. 사실 이건 좀 복잡한 시스템이에요.</p>
+                    <p>기본적으로 AdSense에서 설정한 '광고 빈도'에 따라 결정돼요. 보통 1분에 한 번씩 광고가 뜨도록 설정할 수 있어요.</p>
+                    <p>그리고 사용자의 행동 패턴, 시간대, 심지어 그 날의 광고 재고 상황까지 고려해서 광고를 보여줘요. 그래서 때에 따라 광고가 뜨기도 하고, 안 뜨기도 하는 거예요.</p>
+                </div>
+            </section>
+
+            <section class="ad-section">
+                <h4>여러 사이트, 하나의 AdSense 계정</h4>
+                <div class="ad-item">
+                    <p>좋은 소식이에요! 네, 여러 사이트의 수익을 하나의 AdSense 계정으로 받을 수 있어요.</p>
+                    <p>이렇게 하면 관리하기도 편하고, 수익도 한 눈에 볼 수 있어서 좋죠. 근데 주의할 점이 있어요. 모든 사이트가 AdSense 정책을 잘 지켜야 해요. 하나라도 문제가 생기면 전체 계정에 영향을 줄 수 있거든요.</p>
+                    <p>그리고 너무 많은 사이트를 한 계정에 연결하면 수익이 좀 떨어질 수도 있어요. 그래서 주제가 비슷한 사이트들끼리 묶어서 관리하는 게 좋아요.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
 
 
 
@@ -487,6 +570,28 @@
         wpClose.onclick = function() {
             wpModal.style.display = "none";
         }
+
+// 세 번째 모달 (수익 및 광고)
+const adModal = document.getElementById("adModal");
+const adBtn = document.querySelector(".card.pink button");
+const adClose = adModal.querySelector(".close");
+
+adBtn.onclick = function() {
+    adModal.style.display = "block";
+}
+
+adClose.onclick = function() {
+    adModal.style.display = "none";
+}
+
+// window.onclick 함수에 추가
+if (event.target == adModal) {
+    adModal.style.display = "none";
+}
+
+
+
+        
 
         // 모달 외부 클릭시 닫기
         window.onclick = function(event) {
