@@ -56,7 +56,6 @@
             margin-top: 15px;
         }
 
-        /* 모달 스타일 개선 */
         .modal {
             display: none;
             position: fixed;
@@ -101,20 +100,7 @@
             color: #333;
         }
 
-        .modal h2 {
-            color: #333;
-            margin-bottom: 15px;
-            text-align: center;
-            font-size: 24px;
-        }
-
-        .subtitle {
-            color: #666;
-            text-align: center;
-            margin-bottom: 30px;
-            font-style: italic;
-        }
-
+        /* 첫 번째 모달 스타일 */
         .question-list {
             display: flex;
             flex-direction: column;
@@ -132,11 +118,6 @@
             transition: transform 0.2s;
         }
 
-        .question-item:hover {
-            transform: translateX(10px);
-            background-color: #f0f1f2;
-        }
-
         .number {
             background-color: #6c5ce7;
             color: white;
@@ -150,100 +131,24 @@
             font-weight: bold;
         }
 
-        .question-item p {
-            margin: 0;
-            line-height: 1.6;
-            flex: 1;
-            padding-top: 3px;
+        /* 두 번째 모달 스타일 */
+        .wp-content {
+            padding: 20px 0;
         }
 
-        @media (max-width: 768px) {
-            .modal-content {
-                margin: 10% auto;
-                padding: 20px;
-            }
-            
-            .question-item {
-                padding: 15px;
-            }
+        .wp-content section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
         }
 
-/* 워드프레스 모달 추가 스타일 */
-.wp-content {
-    padding: 20px 0;
-}
-
-.wp-content section {
-    margin-bottom: 30px;
-    padding: 20px;
-    background: #f8f9fa;
-    border-radius: 10px;
-}
-
-.wp-content h3 {
-    color: #333;
-    margin-bottom: 25px;
-    text-align: center;
-}
-
-.wp-content h4 {
-    color: #444;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #6c5ce7;
-    padding-bottom: 8px;
-}
-
-.wp-content h5 {
-    color: #555;
-    margin: 15px 0 10px;
-}
-
-.recommendation .rec-item {
-    margin-bottom: 20px;
-    padding: 15px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.location {
-    color: #666;
-    font-style: italic;
-}
-
-.price-info {
-    font-weight: bold;
-    color: #6c5ce7;
-    margin: 15px 0;
-}
-
-.wp-content ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.wp-content ul li {
-    margin-bottom: 10px;
-    padding-left: 20px;
-    position: relative;
-}
-
-.wp-content ul li:before {
-    content: "•";
-    color: #6c5ce7;
-    position: absolute;
-    left: 0;
-}
-
-.qa-item {
-    margin-bottom: 20px;
-    padding: 15px;
-    background: white;
-    border-radius: 8px;
-}
-
-
-        
+        .wp-content h4 {
+            color: #444;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #6c5ce7;
+            padding-bottom: 8px;
+        }
     </style>
 </head>
 <body>
@@ -254,13 +159,13 @@
             <div class="card purple">
                 <h2>소신이 받은 질문 17개</h2>
                 <p>자주 받는 질문들에 대한 상세한 답변을 제공합니다.</p>
-                <button>자세히 보기</button>
+                <button id="questionBtn">자세히 보기</button>
             </div>
 
             <div class="card peach">
                 <h2>워드프레스(워프) 관련 질문</h2>
                 <p>워드프레스 설치부터 운영까지 모든 궁금증을 해결해드립니다.</p>
-                <button>자세히 보기</button>
+                <button id="wpBtn">자세히 보기</button>
             </div>
 
             <div class="card pink">
@@ -277,104 +182,117 @@
         </div>
     </div>
 
-    <!-- 모달 컨테이너 -->
-    <div id="questionModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>오픈톡방 3일차 받은 질문 리스트</h2>
-            <p class="subtitle">요건 재밌게 읽어주세영~</p>
+    <!-- 첫 번째 모달 -->
+<div id="questionModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>오픈톡방 3일차 받은 질문 리스트</h2>
+        <p class="subtitle">요건 재밌게 읽어주세영~</p>
+        
+        <div class="question-list">
+            <div class="question-item">
+                <span class="number">1</span>
+                <p>워프나 티스 글 쓰실 때 사진은 보통 몇 개 정도 넣는 게 좋은가요? 그게 기준이 있나요?</p>
+            </div>
             
-            <div class="question-list">
-                <div class="question-item">
-                    <span class="number">1</span>
-                    <p>워프나 티스 글 쓰실 때 사진은 보통 몇 개 정도 넣는 게 좋은가요? 그게 기준이 있나요?</p>
-                </div>
-                
-                <div class="question-item">
-                    <span class="number">2</span>
-                    <p>소신님은 워프 글쓰기를 수동으로 하고 계신가요?</p>
-                </div>
-                
-                <div class="question-item">
-                    <span class="number">3</span>
-                    <p>수익적인 면에서는 차이가 있나요? (AI 글쓰기와 직접 글쓰기 비교)</p>
-                </div>
-                
-                <div class="question-item">
-                    <span class="number">4</span>
-                    <p>제 워프 글에서 제 다른 글로 링크를 걸어 놓으면 그걸 본 사람이 그 버튼을 클릭하면 애드센스 수익이 쌓이는 건가요? 전면광고로???</p>
-                </div>
-                
-                <div class="question-item">
-                    <span class="number">5</span>
-                    <p>링크를 누를 때 어떨 땐 광고가 나오고 어떨 땐 바로 링크로 들어가지고 하는 거 같은데 기준이 무엇인지 궁금합니다.</p>
-                </div>
-                
-                <div class="question-item">
-                    <span class="number">6</span>
-                    <p>애드센스 수익은 한 아이디로 다 받으시나요?</p>
-                </div>
-                
-                <div class="question-item">
-                    <span class="number">7</span>
-                    <p>티스토리는 최적화가 어렵지 않다고 들었습니다. 그냥 글 아무거나 하나만 써두고 1달 넘게 놔두면 최적화가 된다던데 맞나요?</p>
-                </div>
-                
-                <div class="question-item">
-                    <span class="number">8</span>
-                    <p>네블에서 다른 사이트로 넘기는 링크 남기면 저품된다던데 이게 맞나요?</p>
-                </div>
-                
-                <div class="question-item">
-                    <span class="number">9</span>
-                    <p>10개씩 돌리면 10개 도메인 사서 하는 거예요?</p>
-                </div>
-                
-                <div class="question-item">
-                    <span class="number">10</span>
-                    <p>소신님은 본인 GPT 만들어서 블로그 글 작성하시나요?</p>
-                </div>
-                
-                <div class="question-item">
-                    <span class="number">11</span>
-                    <p>워프로 도메인 사서 애드센스 승인받은 블로그를 하위 도메인으로 승인 없이 여러 개 할 수 있나요?</p>
-                </div>
-                
-                <div class="question-item">
-                    <span class="number">12</span>
-                    <p>워프는 몇 개까지 할 수 있나요?</p>
-                </div>
-                
-                <div class="question-item">
-                    <span class="number">13</span>
-                    <p>이런 키워드들이 검색량이 받쳐줘야 쓸만한 것들인지 골라야 되겠죠?</p>
-                </div>
-                
-                <div class="question-item">
-                    <span class="number">14</span>
-                    <p>워프는 구글 노출까지 시간이 너무 많이 걸리는 거 같아요. 어떻게 생각하시나요?</p>
-                </div>
-                
-                <div class="question-item">
-                    <span class="number">15</span>
-                    <p>네블에 워프 링크나 티스 링크 괜찮나요?</p>
-                </div>
-                
-                <div class="question-item">
-                    <span class="number">16</span>
-                    <p>워드프레스 만들어서 해보려는데요. 애드센스 받는 거부터 목적으로 시작하면 되는 거죠?</p>
-                </div>
-                
-                <div class="question-item">
-                    <span class="number">17</span>
-                    <p>글쓰기 주제는 하나만 하는 게 좋은 거예요?</p>
-                </div>
+            <div class="question-item">
+                <span class="number">2</span>
+                <p>소신님은 워프 글쓰기를 수동으로 하고 계신가요?</p>
+            </div>
+            
+            <div class="question-item">
+                <span class="number">3</span>
+                <p>수익적인 면에서는 차이가 있나요? (AI 글쓰기와 직접 글쓰기 비교)</p>
+            </div>
+            
+            <div class="question-item">
+                <span class="number">4</span>
+                <p>제 워프 글에서 제 다른 글로 링크를 걸어 놓으면 그걸 본 사람이 그 버튼을 클릭하면 애드센스 수익이 쌓이는 건가요? 전면광고로???</p>
+            </div>
+            
+            <div class="question-item">
+                <span class="number">5</span>
+                <p>링크를 누를 때 어떨 땐 광고가 나오고 어떨 땐 바로 링크로 들어가지고 하는 거 같은데 기준이 무엇인지 궁금합니다.</p>
+            </div>
+            
+            <div class="question-item">
+                <span class="number">6</span>
+                <p>애드센스 수익은 한 아이디로 다 받으시나요?</p>
+            </div>
+            
+            <div class="question-item">
+                <span class="number">7</span>
+                <p>티스토리는 최적화가 어렵지 않다고 들었습니다. 그냥 글 아무거나 하나만 써두고 1달 넘게 놔두면 최적화가 된다던데 맞나요?</p>
+            </div>
+            
+            <div class="question-item">
+                <span class="number">8</span>
+                <p>네블에서 다른 사이트로 넘기는 링크 남기면 저품된다던데 이게 맞나요?</p>
+            </div>
+            
+            <div class="question-item">
+                <span class="number">9</span>
+                <p>10개씩 돌리면 10개 도메인 사서 하는 거예요?</p>
+            </div>
+            
+            <div class="question-item">
+                <span class="number">10</span>
+                <p>소신님은 본인 GPT 만들어서 블로그 글 작성하시나요?</p>
+            </div>
+            
+            <div class="question-item">
+                <span class="number">11</span>
+                <p>워프로 도메인 사서 애드센스 승인받은 블로그를 하위 도메인으로 승인 없이 여러 개 할 수 있나요?</p>
+            </div>
+            
+            <div class="question-item">
+                <span class="number">12</span>
+                <p>워프는 몇 개까지 할 수 있나요?</p>
+            </div>
+            
+            <div class="question-item">
+                <span class="number">13</span>
+                <p>이런 키워드들이 검색량이 받쳐줘야 쓸만한 것들인지 골라야 되겠죠?</p>
+            </div>
+            
+            <div class="question-item">
+                <span class="number">14</span>
+                <p>워프는 구글 노출까지 시간이 너무 많이 걸리는 거 같아요. 어떻게 생각하시나요?</p>
+            </div>
+            
+            <div class="question-item">
+                <span class="number">15</span>
+                <p>네블에 워프 링크나 티스 링크 괜찮나요?</p>
+            </div>
+            
+            <div class="question-item">
+                <span class="number">16</span>
+                <p>워드프레스 만들어서 해보려는데요. 애드센스 받는 거부터 목적으로 시작하면 되는 거죠?</p>
+            </div>
+            
+            <div class="question-item">
+                <span class="number">17</span>
+                <p>글쓰기 주제는 하나만 하는 게 좋은 거예요?</p>
             </div>
         </div>
- 
+    </div>
+</div>
 
-<!-- 워드프레스 관련 모달 추가 -->
-<div id="wordpressModal" class="modal">
+
+
+
+    
+    <div id="questionModal" class="modal">
+        <!-- 17개 질문 모달 내용 -->
+    </div>
+
+
+
+
+
+    
+    <!-- 두 번째 모달 -->
+<div id="wpModal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
         <h2>2025년 1월 22일 AM11:00</h2>
@@ -452,59 +370,69 @@
                     <p>워프에서는 썸네일 한 장이나 글 설명에 필요한 한 장 정도만 넣는 것이 좋습니다. 티스토리와 달리 워프는 사진을 많이 넣을 필요가 없습니다.</p>
                 </div>
 
-<div class="qa-item">
-    <h5>워프 글쓰기 방식</h5>
-    <p>글쓰기 방식은 개인의 선택입니다. 수동으로 직접 쓰는 것과 AI를 활용하는 것 모두 장단점이 있습니다. 중요한 것은 양질의 콘텐츠를 제공하는 것입니다.</p>
-</div>
+                <div class="qa-item">
+                    <h5>워프 글쓰기 방식</h5>
+                    <p>글쓰기 방식은 개인의 선택입니다. 수동으로 직접 쓰는 것과 AI를 활용하는 것 모두 장단점이 있습니다. 중요한 것은 양질의 콘텐츠를 제공하는 것입니다.</p>
+                </div>
 
-<div class="qa-item">
-    <h5>워프와 하위 도메인</h5>
-    <p>애드센스 승인받은 도메인으로 여러 하위 도메인을 만들어 사용할 수 있습니다. 이를 통해 여러 블로그를 운영할 수 있지만, 너무 많이 만들지 않는 것이 좋습니다.</p>
-</div>
+                <div class="qa-item">
+                    <h5>워프와 하위 도메인</h5>
+                    <p>애드센스 승인받은 도메인으로 여러 하위 도메인을 만들어 사용할 수 있습니다. 이를 통해 여러 블로그를 운영할 수 있지만, 너무 많이 만들지 않는 것이 좋습니다.</p>
+                </div>
 
-<div class="qa-item">
-    <h5>워프 운영 개수</h5>
-    <p>워프는 이론상 무제한으로 만들 수 있지만, 실제로는 관리할 수 있는 만큼만 운영하는 것이 좋습니다. 품질 유지를 위해 적정 수를 유지하세요.</p>
-</div>
+                <div class="qa-item">
+                    <h5>워프 운영 개수</h5>
+                    <p>워프는 이론상 무제한으로 만들 수 있지만, 실제로는 관리할 수 있는 만큼만 운영하는 것이 좋습니다. 품질 유지를 위해 적정 수를 유지하세요.</p>
+                </div>
 
-<div class="qa-item">
-    <h5>워프의 구글 노출 시간</h5>
-    <p>워프는 티스토리에 비해 노출 시간이 좀 더 걸릴 수 있습니다. 하지만 이는 카카오가 티스토리를 다음 사이트에 노출하기 쉽게 해주기 때문이며, 워프도 시간이 지나면 충분히 노출됩니다.</p>
-</div>
+                <div class="qa-item">
+                    <h5>워프의 구글 노출 시간</h5>
+                    <p>워프는 티스토리에 비해 노출 시간이 좀 더 걸릴 수 있습니다. 하지만 이는 카카오가 티스토리를 다음 사이트에 노출하기 쉽게 해주기 때문이며, 워프도 시간이 지나면 충분히 노출됩니다.</p>
+                </div>
 
-<div class="qa-item">
-    <h5>워프와 애드센스</h5>
-    <p>애드센스를 목적으로 시작해도 괜찮지만, 그것만을 목표로 하지 않는 것이 좋습니다. 자연스럽게 운영하다 보면 애드센스 승인을 받을 수 있습니다.</p>
-</div>
+                <div class="qa-item">
+                    <h5>워프와 애드센스</h5>
+                    <p>애드센스를 목적으로 시작해도 괜찮지만, 그것만을 목표로 하지 않는 것이 좋습니다. 자연스럽게 운영하다 보면 애드센스 승인을 받을 수 있습니다.</p>
+                </div>
 
-<div class="qa-item">
-    <h5>글쓰기 주제 선정</h5>
-    <p>처음에는 여러 주제로 시작해도 괜찮습니다. 시간이 지나면서 자신이 잘 쓰는 주제나 수익이 잘 나오는 주제를 찾을 수 있습니다. 이후 특정 주제로 집중할 수 있습니다.</p>
-
-            
+                <div class="qa-item">
+                    <h5>글쓰기 주제 선정</h5>
+                    <p>처음에는 여러 주제로 시작해도 괜찮습니다. 시간이 지나면서 자신이 잘 쓰는 주제나 수익이 잘 나오는 주제를 찾을 수 있습니다. 이후 특정 주제로 집중할 수 있습니다.</p>
+                </div>
             </section>
         </div>
     </div>
 </div>
-   <!-- 4. JavaScript 코드 (하나로 통합) -->
+
+
+
+
+
+
+
+    
+    <div id="wpModal" class="modal">
+        <!-- 워드프레스 정보 모달 내용 -->
+    </div>
+
     <script>
-        // 첫 번째 모달 관련 코드
-        const modal = document.getElementById("questionModal");
-        const btn = document.querySelector(".card.purple button");
-        const span = document.getElementsByClassName("close")[0];
+        // 첫 번째 모달
+        const questionModal = document.getElementById("questionModal");
+        const questionBtn = document.getElementById("questionBtn");
+        const questionClose = questionModal.querySelector(".close");
 
-        btn.onclick = function() {
-            modal.style.display = "block";
+        questionBtn.onclick = function() {
+            questionModal.style.display = "block";
         }
 
-        span.onclick = function() {
-            modal.style.display = "none";
+        questionClose.onclick = function() {
+            questionModal.style.display = "none";
         }
 
-        // 두 번째 모달 (워드프레스) 관련 코드
-        const wpModal = document.getElementById("wordpressModal");
-        const wpBtn = document.querySelector(".card.peach button");
-        const wpClose = wpModal.getElementsByClassName("close")[1]; // 인덱스를 1로 변경
+        // 두 번째 모달
+        const wpModal = document.getElementById("wpModal");
+        const wpBtn = document.getElementById("wpBtn");
+        const wpClose = wpModal.querySelector(".close");
 
         wpBtn.onclick = function() {
             wpModal.style.display = "block";
@@ -516,14 +444,13 @@
 
         // 모달 외부 클릭시 닫기
         window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
+            if (event.target == questionModal) {
+                questionModal.style.display = "none";
             }
             if (event.target == wpModal) {
                 wpModal.style.display = "none";
             }
         }
     </script>
-    
 </body>
 </html>
