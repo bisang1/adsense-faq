@@ -639,81 +639,87 @@
     <div id="wpModal" class="modal">
         <!-- 워드프레스 정보 모달 내용 -->
     </div>
+<script>
+    // 첫 번째 모달 (질문 리스트)
+    const questionModal = document.getElementById("questionModal");
+    const questionBtn = document.querySelector(".card.purple button");
+    const questionClose = questionModal.querySelector(".close");
 
-    <script>
-        // 첫 번째 모달
-        const questionModal = document.getElementById("questionModal");
-        const questionBtn = document.getElementById("questionBtn");
-        const questionClose = questionModal.querySelector(".close");
+    questionBtn.onclick = function() {
+        questionModal.style.display = "block";
+    }
 
-        questionBtn.onclick = function() {
-            questionModal.style.display = "block";
-        }
+    questionClose.onclick = function() {
+        questionModal.style.display = "none";
+    }
 
-        questionClose.onclick = function() {
+    // 두 번째 모달 (워드프레스)
+    const wpModal = document.getElementById("wpModal");
+    const wpBtn = document.querySelector(".card.peach button");
+    const wpClose = wpModal.querySelector(".close");
+
+    wpBtn.onclick = function() {
+        wpModal.style.display = "block";
+    }
+
+    wpClose.onclick = function() {
+        wpModal.style.display = "none";
+    }
+
+    // 세 번째 모달 (수익 및 광고)
+    const adModal = document.getElementById("adModal");
+    const adBtn = document.querySelector(".card.pink button");
+    const adClose = adModal.querySelector(".close");
+
+    adBtn.onclick = function() {
+        adModal.style.display = "block";
+    }
+
+    adClose.onclick = function() {
+        adModal.style.display = "none";
+    }
+
+    // 네 번째 모달 (블로그 운영 전략)
+    const blogModal = document.getElementById("blogModal");
+    const blogBtn = document.querySelector(".card.lavender button");
+    const blogClose = blogModal.querySelector(".close");
+
+    blogBtn.onclick = function() {
+        blogModal.style.display = "block";
+    }
+
+    blogClose.onclick = function() {
+        blogModal.style.display = "none";
+    }
+
+    // 모달 외부 클릭시 닫기
+    window.onclick = function(event) {
+        if (event.target == questionModal) {
             questionModal.style.display = "none";
         }
-
-        // 두 번째 모달
-        const wpModal = document.getElementById("wpModal");
-        const wpBtn = document.getElementById("wpBtn");
-        const wpClose = wpModal.querySelector(".close");
-
-        wpBtn.onclick = function() {
-            wpModal.style.display = "block";
-        }
-
-        wpClose.onclick = function() {
+        if (event.target == wpModal) {
             wpModal.style.display = "none";
         }
-
-// 세 번째 모달 (수익 및 광고)
-const adModal = document.getElementById("adModal");
-const adBtn = document.querySelector(".card.pink button");
-const adClose = adModal.querySelector(".close");
-
-adBtn.onclick = function() {
-    adModal.style.display = "block";
-}
-
-adClose.onclick = function() {
-    adModal.style.display = "none";
-}
-
-// window.onclick 함수에 추가
-if (event.target == adModal) {
-    adModal.style.display = "none";
-}
-
-// 네 번째 모달 (블로그 운영 전략)
-const blogModal = document.getElementById("blogModal");
-const blogBtn = document.querySelector(".card.lavender button");
-const blogClose = blogModal.querySelector(".close");
-
-blogBtn.onclick = function() {
-    blogModal.style.display = "block";
-}
-
-blogClose.onclick = function() {
-    blogModal.style.display = "none";
-}
-
-// window.onclick 함수에 추가
-if (event.target == blogModal) {
-    blogModal.style.display = "none";
-}
-
-        
-
-        // 모달 외부 클릭시 닫기
-        window.onclick = function(event) {
-            if (event.target == questionModal) {
-                questionModal.style.display = "none";
-            }
-            if (event.target == wpModal) {
-                wpModal.style.display = "none";
-            }
+        if (event.target == adModal) {
+            adModal.style.display = "none";
         }
-    </script>
+        if (event.target == blogModal) {
+            blogModal.style.display = "none";
+        }
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+    
 </body>
 </html>
